@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.showInfoDao">
+    <resultMap id="result_map" type="model.User">
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="user_type" property="userType"/>
+        <result column="locked" property="locked"/>
+        <result column="credit" property="credit"/>
+
+        <!--先查询三列信息-->
+
+    </resultMap>
+
+    <select id="getAllUsers" resultMap="result_map">
+
+      select user_id,user_name,password,user_type,locked,credit
+      from t_user
+
+    </select>
+
+
+</mapper>
