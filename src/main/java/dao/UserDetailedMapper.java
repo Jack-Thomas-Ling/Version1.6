@@ -3,6 +3,7 @@ package dao;
 import model.RecentUser;
 import model.UserDetailed;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface UserDetailedMapper {
@@ -21,4 +22,14 @@ public interface UserDetailedMapper {
     List<RecentUser> RecentUserData();
 
     UserDetailed getDetailById(int id);
+
+    int updateUserDetailInfo(int id, String phoneNumber, String signature, String sex);
+
+    void updateByPrimaryKey(int userId, String imagePath, String phoneNumber, String userSignature,
+                            String sex, String signTime);
+
+    //void updateByPrimaryKey1(int userId,String eMail);
+
+
+
 }

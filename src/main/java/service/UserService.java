@@ -40,4 +40,12 @@ public interface UserService {
     //根据用户id获取用户详细信息；返回一个UserDetailed对象
     UserDetailed getDetailById(int id);
 
+    //根据用户id，修改用户详细信息；
+
+    //void updateUserDetailInfo(int id,String phoneNumber,String signature,String sex);
+
+
+    void updateByPrimaryKey(int userId, String eMail, String imagePath, String phoneNumber, String userSignature, String sex);
+
+    // void updateByPrimaryKey1(int userId,String eMail);
 }

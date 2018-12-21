@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import service.UserService;
 
 import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,4 +126,32 @@ public class UserServiceI implements UserService {
         return userDetailed;
 
     }
+
+    //根据用户id，修改用户详细信息；
+/*
+   public void updateUserDetailInfo(int id,String phoneNumber,String signature,String sex){
+
+        UserDetailed userDetailed=
+
+
+
+    }
+    */
+
+
+    public void updateByPrimaryKey(int userId, String eMail, String imagePath, String phoneNumber, String userSignature, String sex) {
+        userDetailedMapper.updateByPrimaryKey(userId, eMail, imagePath, phoneNumber, userSignature,
+                sex);
+    }
+
+
+
+
+   /* public void updateByPrimaryKey1(int userId,String eMail){
+        userDetailedMapper.updateByPrimaryKey1(userId,eMail);
+
+    }
+
+    */
+
 }

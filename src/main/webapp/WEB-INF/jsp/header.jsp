@@ -12,15 +12,17 @@
 
 <header class="layui-header">
     <ul class="layui-nav" >
-        <li class="layui-nav-item layui-this layui-unselect" id="a"><a href="">Forum</a></li>
-        <li class="layui-nav-item "><a href="/">主页</a></li>
+        <li class="layui-nav-item  layui-unselect layui-this" id="a"><a href="/">
+            NCU BBS</a></li>
+        <!--     <li class="layui-nav-item  layui-unselect "><a href="/">主页</a></li>       -->
         <li class="layui-nav-item" id="b"><a href="/board">板块</a></li>
+        <li class="layui-nav-item" id="c"><a href="/">问答</a></li>
         <li class="layui-nav-item">
-            <a href="javascript:;">帮助</a>
+            <a href="javascript:;">关于</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a href="">隐私和版权</a></dd>
-                <dd><a href="">积分相关</a></dd>
-                <dd><a href="">向我反馈</a></dd>
+                <dd><a href="">关于本项目</a></dd>
+                <dd><a href="">问题反馈</a></dd>
+                <dd><a href=""></a></dd>
             </dl>
         </li>
         <%--判断用户是否登录--%>
