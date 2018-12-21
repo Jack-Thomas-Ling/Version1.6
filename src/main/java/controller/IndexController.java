@@ -50,7 +50,7 @@ public class IndexController {
 
     }
 
-    @RequestMapping(value = "/showdetail/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "showdetail/{id}", method = RequestMethod.GET)
     public String showDetail(@PathVariable("id") int id ,Model model){
 
         UserDetailed userDetailed=userService.getDetailById(id);
