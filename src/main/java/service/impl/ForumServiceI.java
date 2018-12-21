@@ -1,9 +1,7 @@
 package service.impl;
-import dao.BoardMapper;
-import dao.PostMapper;
-import dao.TopicMapper;
-import dao.UserMapper;
+import dao.*;
 import model.*;
+import net.sf.jsqlparser.statement.select.Top;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.ForumService;
@@ -21,6 +19,9 @@ public class ForumServiceI implements ForumService {
     private PostMapper postMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private showTopicDao showTopicDao;
+
     public void addTopic(Topic topic) {
         topicMapper.insertSelective(topic);
         Board board = boardMapper.selectByPrimaryKey(topic.getBoardId());
@@ -134,5 +135,11 @@ public class ForumServiceI implements ForumService {
     @Override
     public List<Topic> selectByuserId(int userId) {
         return topicMapper.selectByuserId(userId);
+    }
+
+
+    //显示所有topics
+    public List<Topic>  getAllTopics(){
+        return showTopicDao.getAllTopics();
     }
 }

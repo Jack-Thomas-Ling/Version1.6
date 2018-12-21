@@ -63,12 +63,14 @@ public class LoginController {
     public ModelAndView loginSuccess(@RequestParam String username, HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
         HttpSession session = request.getSession();
-        userService.addCredit(username, 5);
+        userService.addCredit(username, 5);//登录一次添加5积分
         //获取ip和date
         userService.setLoginLogAndDate(username,new Date(System.currentTimeMillis()),request.getRemoteAddr());
         session.setAttribute("user", userService.findUserByName(username));
         modelAndView.setViewName("redirect:/");
         return modelAndView;
+
+        //登陆成功，返回主界面，并这只session（user，User)
 
     }
     @RequestMapping(value = "/user/logout",method = RequestMethod.GET)

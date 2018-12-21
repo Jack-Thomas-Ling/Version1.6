@@ -14,6 +14,7 @@ public class User implements Serializable {
 
     private Byte userType;
 
+
     private Byte locked;
 
     private Integer credit;

@@ -3,6 +3,7 @@ package service.impl;
 import dao.LoginLogMapper;
 import dao.UserDetailedMapper;
 import dao.UserMapper;
+import dao.showInfoDao;
 import model.LoginLog;
 import model.RecentUser;
 import model.User;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import service.UserService;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,6 +25,8 @@ public class UserServiceI implements UserService {
     private LoginLogMapper loginLogMapper;
     @Autowired
     private UserDetailedMapper userDetailedMapper;
+    @Autowired
+    private showInfoDao showInfoDao;
 
     public User findUserByName(String username) {
         return userMapper.selectByUsername(username);
@@ -91,6 +95,12 @@ public class UserServiceI implements UserService {
         userMapper.insertSelective(user);
     }
 
+    public List<User> getAllUsers(){
+        //List<User> list=new ArrayList<>();
+        return showInfoDao.getAllUsers();
+
+    }
+
     @Override
     public void updateAddressOfPic(int userId,String address) {
         UserDetailed userDetailed = new UserDetailed();
@@ -107,5 +117,12 @@ public class UserServiceI implements UserService {
     @Override
     public List<RecentUser> RecentUserData() {
         return userDetailedMapper.RecentUserData();
+    }
+
+    //根据用户id返回用户详细信息
+   public UserDetailed getDetailById(int id){
+        UserDetailed userDetailed=userDetailedMapper.getDetailById(id);
+        return userDetailed;
+
     }
 }

@@ -78,7 +78,7 @@
     background-color: #fff;
     box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.05);
 ">
-        <img id="img" src="/userPic/pic.jpg" alt="aa" style="width: 120px;height: 120px;border-radius: 100%">
+        <img id="img" src="/userPic/pic.jpg" alt="userProfile" style="width: 120px;height: 120px;border-radius: 100%">
         <br/>
     <h1>${username}</h1>
     <c:if test="${info.sex=='男'}">
@@ -145,7 +145,7 @@
         }
         //执行实例
         var uploadInst = upload.render({
-            elem: '#up' //绑定元素
+            elem: '#up' //绑定元素,就是要执行上传功能的按钮
             ,url: '/upload/usericon/' //上传接口
             ,done: function(res){
                 $("#img").attr("src",res.path);

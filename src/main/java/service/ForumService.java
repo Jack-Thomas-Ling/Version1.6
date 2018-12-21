@@ -1,6 +1,7 @@
 package service;
 
 import model.*;
+import net.sf.jsqlparser.statement.select.Top;
 
 import java.util.List;
 
@@ -37,4 +38,6 @@ public interface ForumService {
     List<Data> getBoardData(int boardId);
 
     List<Topic> selectByuserId(int userId);
+
+    List<Topic> getAllTopics();
 }

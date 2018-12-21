@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
-//每个帖子实体
+//每个回复帖
 
 public class Post implements Serializable {
     public static final byte TYPE_MAIN = 1;

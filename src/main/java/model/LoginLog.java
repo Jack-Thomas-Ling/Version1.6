@@ -2,7 +2,8 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Date;
-
+//登录日志
+//此类可以不要；
 public class LoginLog implements Serializable {
     private Integer loginLogId;
 

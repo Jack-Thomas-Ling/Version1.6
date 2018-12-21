@@ -19,4 +19,6 @@ public interface UserDetailedMapper {
     int updateByPrimaryKey(UserDetailed record);
 
     List<RecentUser> RecentUserData();
+
+    UserDetailed getDetailById(int id);
 }
