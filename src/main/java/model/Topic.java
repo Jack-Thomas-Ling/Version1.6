@@ -27,6 +27,16 @@ public class Topic implements Serializable {
 
     private Integer digest;//等于一，加精；
 
+    private Integer istop;
+
+    public Integer getIstop() {
+        return istop;
+    }
+
+    public void setIstop(Integer istop) {
+        this.istop = istop;
+    }
+
     public Integer getTopicId() {
         return topicId;
     }

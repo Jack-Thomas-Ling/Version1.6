@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="../../statics/css/layui.css">
 <script src="../../statics/layui.js"></script>
 
-<header class="layui-header">
-    <ul class="layui-nav" >
+<header class="layui-header ">
+    <ul class="layui-nav layui-bg-green">
         <li class="layui-nav-item  layui-unselect layui-this" id="a"><a href="/">
             NCU BBS</a></li>
         <!--     <li class="layui-nav-item  layui-unselect "><a href="/">主页</a></li>       -->

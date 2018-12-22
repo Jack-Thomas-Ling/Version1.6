@@ -181,4 +181,38 @@
       digest = #{digest,jdbcType=INTEGER}
     where topic_id = #{topicId,jdbcType=INTEGER}
   </update>
+
+  <!--加精-->
+  <update id="jiajing" parameterType="model.Topic">
+
+    update t_topic
+    set  digest=1
+    where topic_id=#{topic_id}
+  </update>
+
+  <!--取消加精-->
+  <update id="canceljiajing" parameterType="model.Topic">
+    update t_topic
+    set digest=0
+    where topic_id=#{topic_id}
+  </update>
+
+
+  <!--置顶-->
+  <update id="top" parameterType="model.Topic">
+   update t_topic
+    set istop=1
+    where topic_id=#{topic_id}
+
+  </update>
+
+  <!--取消置顶-->
+
+  <update id="canceltop" parameterType="model.Topic">
+   update t_topic
+    set istop=0
+    where topic_id=#{topic_id}
+
+  </update>
+
 </mapper>

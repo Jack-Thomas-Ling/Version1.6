@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiOperation;
 import model.Topic;
 import model.User;
 import model.UserDetailed;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import service.ForumService;
 import service.UserService;
 
-import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -28,6 +27,7 @@ public class IndexController {
     private UserService userService;
     @Autowired
     private ForumService forumService;
+
 
     @RequestMapping(value = "/index1",method = RequestMethod.GET)
     @ApiOperation(value = "index1",httpMethod = "GET")
@@ -95,6 +95,58 @@ public class IndexController {
         UserDetailed userDetailed=userService.getDetailById(id);
         model.addAttribute("userDetail",userDetailed);
         return "showUserDetailedInfo";
+    }
+
+
+    //加精
+    @RequestMapping(value = "/jiajing", method = RequestMethod.GET)
+    public String jiajing(@RequestParam("topic_id") int id) {
+
+        ModelAndView modelAndView = new ModelAndView();
+        forumService.jiajing(id);
+
+
+        return "redirect:/test/showtopic";
+
+    }
+
+    //取消加精
+    @RequestMapping(value = "/canceljiajing", method = RequestMethod.GET)
+    public String canceljiajing(@RequestParam("topic_id") int id) {
+
+        ModelAndView modelAndView = new ModelAndView();
+        forumService.canceljiajing(id);
+
+
+        return "redirect:/test/showtopic";
+
+    }
+
+    //置顶
+    @RequestMapping(value = "/top", method = RequestMethod.GET)
+
+    public String top(@RequestParam("topic_id") int id) {
+
+        // ModelAndView modelAndView=new ModelAndView();
+        forumService.top(id);
+
+
+        return "redirect:/test/showtopic";
+
+    }
+
+
+    //取消置顶
+    @RequestMapping(value = "/canceltop", method = RequestMethod.GET)
+
+    public String canceltop(@RequestParam("topic_id") int id) {
+
+        // ModelAndView modelAndView=new ModelAndView();
+        forumService.canceltop(id);
+
+
+        return "redirect:/test/showtopic";
+
     }
 
 

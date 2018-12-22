@@ -25,4 +25,18 @@ public interface TopicMapper {
 
     List<Topic> selectByuserId(int userId);
 
+    //根据贴子id加精
+    void jiajing(int id);
+
+    //根据贴子id取消加精
+    void canceljiajing(int id);
+
+
+    //根据帖子id置顶帖子
+    void top(int id);
+
+
+    //根据帖子id取消置顶帖子
+    void canceltop(int id);
+
 }

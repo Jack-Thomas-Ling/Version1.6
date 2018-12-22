@@ -7,12 +7,19 @@
         <id column="topic_id" property="topicId"/>
         <result column="board_id" property="boardId"/>
         <result column="topic_title" property="topicTitle"/>
+        <result column="user_id" property="userId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="topic_views" property="topicViews"/>
+        <result column="topic_replies" property="topicReplies"/>
+        <result column="digest" property="digest"/>
+        <result column="istop" property="istop"/>
 
     </resultMap>
 
     <select id="getAllTopics" resultMap="result_map">
 
-      select topic_id,board_id,topic_title
+      select topic_id,board_id,topic_title,user_id,create_time,topic_views,topic_replies,digest,istop
+
       from t_topic
 
 

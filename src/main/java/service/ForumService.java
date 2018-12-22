@@ -39,5 +39,20 @@ public interface ForumService {
 
     List<Topic> selectByuserId(int userId);
 
+
+    //显示所有的帖子 不需要参数，返回所有的帖子及其信息；
     List<Topic> getAllTopics();
+
+
+    //根据帖子id加精帖子
+    void jiajing(int id);
+
+    //根据贴子id取消加精
+    void canceljiajing(int id);
+
+    //根据帖子id置顶帖子
+    void top(int id);
+
+    //根据帖子id取消置顶帖子
+    void canceltop(int id);
 }

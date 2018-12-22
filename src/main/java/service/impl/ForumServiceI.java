@@ -142,4 +142,27 @@ public class ForumServiceI implements ForumService {
     public List<Topic>  getAllTopics(){
         return showTopicDao.getAllTopics();
     }
+
+    //根据帖子id加精帖子
+    public void jiajing(int id) {
+        topicMapper.jiajing(id);
+
+    }
+
+
+    //根据贴子id取消加精
+    public void canceljiajing(int id) {
+        topicMapper.canceljiajing(id);
+    }
+
+
+    //根据帖子id置顶帖子
+    public void top(int id) {
+        topicMapper.top(id);
+    }
+
+    //根据帖子id取消置顶帖子
+    public void canceltop(int id) {
+        topicMapper.canceltop(id);
+    }
 }

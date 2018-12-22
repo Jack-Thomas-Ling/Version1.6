@@ -46,16 +46,16 @@ a{
     </style>
 </head>
 <body>
-<footer class="footer">
+<footer class="footer layui-bg-cyan">
     <div class="container">
-        第一个论坛Demo<br/>
+        NCU BBS<br/>
         spring+springMVC+Mybatis+JQuery+bootstrap+layui
         <br/><br/>
-        <p>Designed by _yiyi</p>
+        <p>Designed by a 'team'</p>
     </div>
     <div class="info">
         <p style="text-align: center;font-size: 16px;">统计信息</p>
-        <ul >
+        <ul>
             <li>会员数: ${userNum}</li>
         </ul>
     </div>
@@ -63,7 +63,7 @@ a{
         <p style="text-align: center;font-size: 16px;">友情链接</p>
         <ul >
             <li><a href="/">Github</a></li>
-            <li><a href="/">Email:Orochi1972@163.com</a></li>
+            <li><a href="/">Email:Example@email.ncu.edu.cn</a></li>
             <li><a href="https://blog.csdn.net/orochi1972">Blog:csdn</a></li>
         </ul>
     </div>
